@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication Table</title>
+  </head>
+  <body>
+    <div class="first deploy">
+      <div class="second deploy">
+        <div class="third deploy">
+          <input
+            autofocus
+            id="start-input"
+            type="text"
+            placeholder="Insert start point"
+          /><br /><br />
+          <input
+            id="end-input"
+            type="text"
+            placeholder="Insert end point"
+          /><br /><br />
+        </div>
+        <div class="btn wrapper">
+          <button onclick="displayTable()">Display Table</button>
+        </div>
+        <div id="table-multiple"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function displayTable() {
+    let startInput = document.getElementById("start-input");
+    let startInputValue = startInput.value;
+
+    let endInput = document.getElementById("end-input");
+    let endInputValue = endInput.value;
+
+    let webTable = document.getElementById("table-multiple");
+    webTable.innerHTML = "";
+
+    for (start = startInputValue; start <= endInputValue; start++) {
+      webTable.innerHTML += `<br>`;
+      for (i = 1; i <= 12; i++) {
+        webTable.innerHTML += `<p>${start} x ${i} = ${start * i}</p> `;
+      }
+    }
+  }
+</script>
